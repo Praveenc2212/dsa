@@ -30,14 +30,14 @@ void lca(vector<vector<int>> & adj  ,int p1 ,int p2 ) {
      for(int a : path1 ) cout<<a<<" ";
      cout<<endl;
      for(int a : path2 ) cout<<a<<" ";
-
-
 }
 
 void solve(){
     cin>>n;
     vector<vector<int>> adj(n);
     int e;
+    vector<vector<int>> arr;
+    return 
     cin>>e;
     for(int i =0 ;i < e ;i++){
         int u , v ;
