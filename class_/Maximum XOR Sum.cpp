@@ -52,12 +52,24 @@ void solve(){
         cin>>arr[i];
     }
 
-    vector<int zoros( n );
+    vector<int> mirror( n );
     int i= 0 , j = n-1;
-    wihle( i < j  
+    while( i < j )
     {
-        if(    )
+        mirror.push_back( arr[i]^ arr[j] );
+        i++;
+        j--;
     }
+    int ans;
+    if(i==j){
+        ans = arr[i];
+        mirror.push_back(arr[i]);
+    }
+    else ans = 0 ;
+    for(int a :  mirror) {
+        ans = max( ans , a ) ;
+    }
+    cout<<ans;
 
 }
 int main(){

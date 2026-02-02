@@ -56,23 +56,26 @@ using namespace std;
 bool check(int del , vector<int>arr1 , vector<int>arr2) {
 
     int n1 = arr1.size() , n2 = arr2.size();
-    int i = 0 , j = del  , f = 1;
-    if( n1 <  n2 - del  ) {
-        return false;
-    }
-    int points = 0 ;
-    while( i < n1 && j < n2  ){
-        
-        if( arr1[i] > arr2[j] ){
-            i++;
-            // points = points  +arr1[i] - arr2[j];
-            j++;
+    int i = 0 , j = del;
+    int heros = n1 ;
+    // int points = 0 ;
+    while(  j < n2  ){
+
+        if( i == n1  && heros > 0 ){
+            i = 0 ;
+        } 
+
+        if( arr1[i] >= arr2[j]){
+            arr1[i] -= arr2[j];
         }
-        else{
+        else 
             return false;
-        }
+
+        if( arr1[i] == 0 )  heros--;
+        i++;
+        j++;
     }
-    return j >= n2  ;
+    return j >= n2 -1 ;
 }
 int main(){
 

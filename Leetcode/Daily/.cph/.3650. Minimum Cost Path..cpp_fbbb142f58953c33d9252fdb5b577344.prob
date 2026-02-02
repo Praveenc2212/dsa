@@ -1,0 +1,1 @@
+{"name":"Local: 3650","url":"e:\\Personals\\dsa\\Leetcode\\Daily\\3650. Minimum Cost Path..cpp","tests":[{"id":1769839633336,"input":"3 3 \n2\n1 3 3\n2 5 4 \n4 3 5","output":"7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Personals\\dsa\\Leetcode\\Daily\\3650. Minimum Cost Path..cpp","group":"local","local":true}
