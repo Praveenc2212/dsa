@@ -105,30 +105,3 @@ int main(){
     cout<<ans;
     return  0 ;
 }
-
-
-// You are given two arrays:
-
-// heroes, where heroes[i] represents the health of the iᵗʰ hero
-
-// villains, where villains[j] represents the health of the jᵗʰ villain
-
-// Battle Rules
-
-// Heroes fight in order, starting from index 0.
-
-// Villains are faced in order, starting from the front of the list.
-
-// After removing some villains, Hero i fights Villain i.
-
-// A hero defeats a villain only if:
-
-
-
-// hero_health > villain_health
-
-// After winning, the hero’s remaining health becomes:
-
-// hero_health -= villain_health
-
-// 5 . If a hero’s health is less than or equal to the villain’s health, the hero is defeated and the battle stops immediately.

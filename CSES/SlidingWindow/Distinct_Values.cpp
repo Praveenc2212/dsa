@@ -24,11 +24,9 @@ void solve(){
         ans.push_back(mp.size());
     }
     for(auto a : ans ){
-        // cout<<"Praveen";
         cout<<a<<" ";
     }
     cout<<endl;
-
 }
 int main(){
     ios::sync_with_stdio(false);

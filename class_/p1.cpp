@@ -35,22 +35,7 @@ int dfs(int u , int time ){
     visited[u] = false;
     return ans;
 }
-void bfs(){
 
-    queue<int> q ;
-    q.push(0);
-
-    visited[0] = true;
-    vector<int>dis(n);
-    dis[0] = 0 ;  
-    while(!q.empty()){
-
-        int sz = q.size();
-
-
-    }
-
-}
 void solve(){
     int res= dfs(0 , 0 );
     if( res == 1e9 ) res = -1 ;
@@ -77,7 +62,7 @@ int main(){
         cin>>t>>u>>v;
         u--;
         v--;
-        // mp[t] = { u , v  };
+
         mp[u].insert( { v , t } );
         mp[v].insert( { u , t } );
      }

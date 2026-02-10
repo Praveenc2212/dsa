@@ -26,7 +26,6 @@ void solve(){
     cout<<as<<endl;
 }
 int main(){
-
     int t= 1;
     while(t--){
         solve();
