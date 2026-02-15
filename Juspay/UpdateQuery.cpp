@@ -1,54 +1,3 @@
-#include<bits/stdc++.h>
-using  namespace std;
-
-#define vi vector<int>
-#define vii vector<vi>
-vii adj;
-vi in;
-vi out;
-int t = 0; 
-void dfs(int u ,int par, int d ) {
-
-    in[u] = t ;
-    t += 1; 
-    for(int v : adj[u]){
-        if( v == par ) continue;
-        dfs(v , u, d + 1 );
-    }
-
-    out[u] = t;
-    t += 1 ;
-}
-int main(){
-    
-    int n ; 
-    cin>> n ;
-    adj.resize(n + 1 );
-    in.resize(n + 1 );
-    out.resize(n + 1 );
-
-    for(int i = 0 ;i < n-1 ; i++){
-        int u , v ;
-        cin>>u>>v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
-    }
-    dfs( 1 , 0,0);
-
-    cout<<"IN : ";
-    for(int i =1 ; i <= n ;i++){
-        cout<<in[i]<<" ";
-    }
-    cout<<endl<<"OUT : ";
-    for(int i = 1 ;i <= n ; i++){
-        cout<<out[i]<<" ";
-    }
-    cout<<endl;
-    return  0;
-}
-//================================================================
-//================================================================
-//================================================================
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -82,13 +31,15 @@ vi jump[21];
 
 int n, q;
 
-int t = 1;
+int t = 1 ;
 
 int bit[2 * mxN];
 
 void dfs(int u, int par, int d){
+    
     depth[u] = d;
     jump[0][u] = par;
+    
     in[u] = t;
     t += 1;
 
@@ -147,7 +98,6 @@ int query(int id){
     }
     return ans;
 }
-
 void solve(){
     cin >> n;
 
@@ -177,10 +127,13 @@ void solve(){
         cin >> type;
 
         if(type == 1){
-            int pos, x;
-            cin >> pos >> x;
+            int pos , x ;
 
-            int u = edges[pos].F, v = edges[pos].S;
+            // cin >> pos >> x ;
+
+            // int u = edges[pos].F, v = edges[pos].S;
+            int u , v ;
+            cin>>u>>v>>x;
             int node = -1;
 
             if(depth[v] > depth[u]) node = v;
@@ -188,17 +141,21 @@ void solve(){
 
             int delta = x - val[node];
             val[node] = x;
-
+    
             update(in[node], delta);
-            update(out[node], -delta);
+            update(out[node],-delta);
+
         }else{
+
             int u, v;
             cin >> u >> v;
+            int ee;
+            cin>>ee;
 
             int L = lca(u, v);
 
-            int ans = query(in[u]);
-            ans += query(in[v]);
+            int ans = query(in[u]) ;
+            ans += query(in[v]) ;
             ans -= 2 * query(in[L]);
 
             cout << ans << endl;
@@ -207,7 +164,6 @@ void solve(){
 }
 
 int32_t main(){
-    
     ios_base::sync_with_stdio(false);
     cin.tie(0);
 

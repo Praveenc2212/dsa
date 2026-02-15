@@ -1,0 +1,1 @@
+{"name":"Local: DiameterReRoot","url":"e:\\Personals\\dsa\\CSES\\Tree\\DiameterReRoot.cpp","tests":[{"id":1770861672277,"input":"5\n1 2\n1 3\n3 4\n3 5","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Personals\\dsa\\CSES\\Tree\\DiameterReRoot.cpp","group":"local","local":true}
