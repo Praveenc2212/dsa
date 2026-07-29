@@ -43,14 +43,14 @@ void dfs(int u, int par, int d){
     in[u] = t;
     t += 1;
 
-    for(int i = 1; i < 21; i += 1){
+    for(int i = 1; i < 21 ; i += 1){
         jump[i][u] = jump[i - 1][jump[i - 1][u]];
     }
 
     for(auto& p : g[u]){
         int v = p.F, w = p.S;
         if(v != par){
-            val[v] = w;
+            val[v] = w ; 
             dfs(v, u, d + 1);
         }
     }
@@ -171,3 +171,14 @@ int32_t main(){
 
     return 0;
 }
+
+/*
+
+Outpass List------------------------------------------------Today
+
+S.NO | name | staffId | Department | outTime | . | Duration |
+
+
+
+
+*/

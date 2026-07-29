@@ -1,1 +1,1 @@
-{"name":"Local: summa","url":"e:\\Personals\\dsa\\summa.cpp","tests":[{"id":1774772795488,"input":"6\n3\n9\n6\n14\n2\n9\n4","output":"-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Personals\\dsa\\summa.cpp","group":"local","local":true}
+{"name":"Local: summa","url":"e:\\Personals\\dsa\\summa.cpp","tests":[{"id":1774772795488,"input":"4 2 \n-100 3 4 -299","output":"7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Personals\\dsa\\summa.cpp","group":"local","local":true}

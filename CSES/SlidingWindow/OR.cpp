@@ -1,11 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
-int ns = 60 ;
-vector<long long> num(ns , 0 );
+int ns = 65;
+long long num[65];
+long long current = 0 ;
 void add( long long x ){
     for(int i =0 ;i < ns ;i += 1 ) {
         if(x & ( 1LL << i )){
             num[i]++;
+            if( num[i] == 1 ){
+                current =  current | (1LL << i );
+            }
         }
     }
 }
@@ -13,19 +17,14 @@ void remove(long long x){
     for(int i =0 ;i < ns ;i += 1 ) {
         if(x&( 1LL << i )){
             num[i]--;
+            if( num[i] == 0 ){
+                current -= ( 1LL << i );
+            }
         }
     }
-}
-long long get(){
-    long long res = 0 ;
-    for(int i = 0 ;i < ns ; i+=1 ) {
-        if(num[i] > 0 ){
-            res = res | (1 << i);
-        }
-    }
-    return res;
 }
 void solve(){
+    memset(num , 0 , sizeof( num ));
     long long n , k ,x, a ,b,c ;
     cin>>n>>k;
     cin>>x>>a>>b>>c;
@@ -34,15 +33,17 @@ void solve(){
     for(int i= 1 ; i < n ;i++){
         arr[i] = ( a * arr[i-1] + b ) % c ; 
     }
+
+
     long long ans = 0 ;
     for(int i = 0 ;i < k ;i++){
         add(arr[i]);
     }
-    ans = get();
+    ans = current;
      for(int i = k; i < n ; i++){
          add(arr[i]);
          remove(arr[i-k]);;
-        ans = ans ^ get();
+        ans = ans ^ current ;
     }
     cout<<ans<<endl;
 }
@@ -55,11 +56,3 @@ int main(){
     }
     return 0; 
 }
-// [3,0,1,8,2]
-/*
-0 0 0 0 1 0 2 2
-*/
-// [3,0,1,8,2]
-/*
-0 0 0 0 1 0 2 2
-*/
